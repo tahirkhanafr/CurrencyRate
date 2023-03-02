@@ -10,9 +10,8 @@ import com.example.currency_rate.databinding.ActivityMainBinding
 import com.example.currency_rate.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    @AndroidEntryPoint
-    class MainActivity : AppCompatActivity() {
         private lateinit var binding: ActivityMainBinding
 
         private val viewModel: MainViewModel by viewModels()
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
             lifecycleScope.launchWhenStarted {
                 viewModel.conversion.collect { event ->
-                    when(event) {
+                    when (event) {
                         is MainViewModel.CurrencyEvent.Success -> {
                             binding.progressBar.isVisible = false
                             binding.tvResult.setTextColor(Color.BLACK)
@@ -52,4 +51,3 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}
