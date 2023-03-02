@@ -2,6 +2,7 @@
     <string name="app_name">Currency_Rate</string>
 
     <string-array name="currency_codes">
+        <item>USD</item>
         <item>CAD</item>
         <item>EUR</item>
         <item>HKD</item>
